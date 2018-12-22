@@ -40,6 +40,16 @@ for (let i = 0; i < numberBtns.length; i++) {
 //   symbolBtns[i].addEventListener('click', performOperation, false);
 // }
 
+// create function when you click clear button 
+// reset and return 0
+// update displayVal
+
+clearBtn.onclick = () => {
+  displayVal = '0';
+  pendingVal = undefined;
+  evalStringArray = [];
+  displayValElement.innerHTML = displayVal;
+}
 
 
 
