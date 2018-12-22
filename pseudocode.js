@@ -51,6 +51,24 @@ clearBtn.onclick = () => {
   displayValElement.innerHTML = displayVal;
 }
 
+// create function when you click backspace button
+// take displayVal and slice last object off the array (use length of array -1)
+// display new value
+
+backspaceBtn.onclick = () => {
+  let lengthOfDisplayVal = displayVal.length;
+  displayVal = displayVal.slice(0, lengthOfDisplayVal - 1);
+  displayValElement.innerText = displayVal;
+
+  // if display val is = to an empty string display 0
+
+  if (displayVal === '')
+    displayVal = '0';
+}
+
+
+
+
 
 
 // // create a varible = to an array for the users inputs
