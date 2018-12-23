@@ -39,10 +39,49 @@ for (let i = 0; i < numberBtns.length; i++) {
 var performOperation = (clickObj) => {
   var symbol = clickObj.target.innerText;
 
-  switch (symbol) {
-    case '+':
+switch (symbol) {
+  case '+':
     pendingVal = displayVal;
-    displayVal = '0'
+    displayVal = '0';
+    displayValElement.innerText = displayVal;
+    evalStringArray.push(pendingVal);
+    evalStringArray.push('+');
+    break;
+
+  case '-':
+    pendingVal = displayVal;
+    displayVal = '0';
+    displayValElement.innerText = displayVal;
+    evalStringArray.push(pendingVal);
+    evalStringArray.push('-');
+    break;
+    
+  case '*':
+    pendingVal = displayVal;
+    displayVal = '0';
+    displayValElement.innerText = displayVal;
+    evalStringArray.push(pendingVal);
+    evalStringArray.push('*');
+    break;
+
+  case '÷':
+    pendingVal = displayVal;
+    displayVal = '0';
+    displayValElement.innerText = displayVal;
+    evalStringArray.push(pendingVal);
+    evalStringArray.push('/');
+    break;
+
+  case '=':
+    evalStringArray.push(display);
+    var evaluation = eval(evalStringArray.join(' '));
+    displayVal = evaluation + '';
+    displayValElemnet.innerText = displayVal;
+    evalStringArray = [];
+  break;
+default:
+  break;
+
   }
 }
 for (let i = 0; i < symbolBtns.length; i++) {
