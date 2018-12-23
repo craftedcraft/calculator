@@ -36,9 +36,18 @@ for (let i = 0; i < numberBtns.length; i++) {
   numberBtns[i].addEventListener('click', updateDisplayVal, false);
 }
 
-// for (let i = 0; i < symbolBtns.length; i++) {
-//   symbolBtns[i].addEventListener('click', performOperation, false);
-// }
+var performOperation = (clickObj) => {
+  var symbol = clickObj.target.innerText;
+
+  switch (symbol) {
+    case '+':
+    pendingVal = displayVal;
+    displayVal = '0'
+  }
+}
+for (let i = 0; i < symbolBtns.length; i++) {
+  symbolBtns[i].addEventListener('click', performOperation, false);
+}
 
 // create function when you click clear button 
 // reset and return 0
